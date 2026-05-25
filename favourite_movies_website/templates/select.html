@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %}Select Movie{% endblock %}
+
+{% block contents %}
+    <div class="conteniner">
+        <h1 class="heading">Select a Movie</h1>
+
+        {% for movie in movies %}
+        <p><a href="{{ url_for('search_and_add', id=movie.id) }}">{{ movie.title }} - {{ movie.release_date }}</a></p>
+        {% endfor %}
+
+    </div>
+
+
+
+{% endblock %}
+
+
+
